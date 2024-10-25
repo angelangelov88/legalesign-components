@@ -5,7 +5,24 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ButtonRounded, ButtonSize, ButtonType, ButtonVariant } from "./components/legalesign-button/legalesign-button";
+export { ButtonRounded, ButtonSize, ButtonType, ButtonVariant } from "./components/legalesign-button/legalesign-button";
 export namespace Components {
+    interface LegalesignButton {
+        "customClass"?: string;
+        "disabled"?: boolean;
+        "loading"?: boolean;
+        "outline": boolean;
+        "rounded"?: ButtonRounded;
+        "size"?: ButtonSize;
+        "type"?: ButtonType;
+        "variant"?: ButtonVariant;
+    }
+    interface MyComp {
+        "first": string;
+        "last": string;
+        "middle": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +39,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLLegalesignButtonElement extends Components.LegalesignButton, HTMLStencilElement {
+    }
+    var HTMLLegalesignButtonElement: {
+        prototype: HTMLLegalesignButtonElement;
+        new (): HTMLLegalesignButtonElement;
+    };
+    interface HTMLMyCompElement extends Components.MyComp, HTMLStencilElement {
+    }
+    var HTMLMyCompElement: {
+        prototype: HTMLMyCompElement;
+        new (): HTMLMyCompElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +58,27 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "legalesign-button": HTMLLegalesignButtonElement;
+        "my-comp": HTMLMyCompElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface LegalesignButton {
+        "customClass"?: string;
+        "disabled"?: boolean;
+        "loading"?: boolean;
+        "outline"?: boolean;
+        "rounded"?: ButtonRounded;
+        "size"?: ButtonSize;
+        "type"?: ButtonType;
+        "variant"?: ButtonVariant;
+    }
+    interface MyComp {
+        "first"?: string;
+        "last"?: string;
+        "middle"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +94,8 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "legalesign-button": LegalesignButton;
+        "my-comp": MyComp;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +103,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "legalesign-button": LocalJSX.LegalesignButton & JSXBase.HTMLAttributes<HTMLLegalesignButtonElement>;
+            "my-comp": LocalJSX.MyComp & JSXBase.HTMLAttributes<HTMLMyCompElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
