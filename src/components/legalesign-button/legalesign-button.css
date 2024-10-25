@@ -11,10 +11,6 @@
   justify-content: center;
 }
 
-.main {
-  background-color: red;
-  color: bisque;
-}
 .button {
   cursor: pointer;
   border: none;
@@ -26,8 +22,6 @@
   white-space: nowrap;
   justify-content: center;
   transition: all 0.3s;
-  background-color: aquamarine !important;
-  color: red !important;
 }
 
 .button:focus {

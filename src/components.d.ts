@@ -38,8 +38,23 @@ export namespace Components {
         "middle": string;
     }
 }
+export interface LegalesignButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLLegalesignButtonElement;
+}
 declare global {
+    interface HTMLLegalesignButtonElementEventMap {
+        "onClick": any;
+    }
     interface HTMLLegalesignButtonElement extends Components.LegalesignButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLLegalesignButtonElementEventMap>(type: K, listener: (this: HTMLLegalesignButtonElement, ev: LegalesignButtonCustomEvent<HTMLLegalesignButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLLegalesignButtonElementEventMap>(type: K, listener: (this: HTMLLegalesignButtonElement, ev: LegalesignButtonCustomEvent<HTMLLegalesignButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLLegalesignButtonElement: {
         prototype: HTMLLegalesignButtonElement;
@@ -68,6 +83,7 @@ declare namespace LocalJSX {
         "customClass"?: string;
         "disabled"?: boolean;
         "loading"?: boolean;
+        "onOnClick"?: (event: LegalesignButtonCustomEvent<any>) => void;
         "outline"?: boolean;
         "rounded"?: ButtonRounded;
         "size"?: ButtonSize;
