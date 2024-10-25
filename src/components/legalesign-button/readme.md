@@ -19,13 +19,6 @@
 | `variant`     | `variant`      |             | `"destructive" \| "destructiveTertiary" \| "primary" \| "secondary" \| "secondaryColour" \| "tertiary" \| "tertiaryDashed" \| "tertiaryGrey"` | `'primary'` |
 
 
-## Events
-
-| Event     | Description | Type               |
-| --------- | ----------- | ------------------ |
-| `onClick` |             | `CustomEvent<any>` |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

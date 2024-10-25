@@ -120,7 +120,6 @@
   "license": "MIT",
   "packageManager": "pnpm@8.15.0",
   "dependencies": {
-    "@types/react": "^18.3.12",
-    "clsx": "^2.1.1"
+    "@types/react": "^18.3.12"
   }
 }

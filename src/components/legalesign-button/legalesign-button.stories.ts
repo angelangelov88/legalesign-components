@@ -18,9 +18,9 @@ Default.args = {
 
 export const FirstStory = Template.bind({});
 FirstStory.args = {
-  variant: 'primary',
+  variant: 'secondary',
   outline: true,
-  size: 'sm',
+  size: 'lg',
   rounded: 'lg',
   children: 'Click me1',
   loading: true,
@@ -29,43 +29,17 @@ export const SecondStory = Template.bind({});
 SecondStory.args = {
   variant: 'secondary',
   outline: true,
-  size: 'sm',
+  size: 'lg',
   rounded: 'lg',
   children: 'Click me2',
-  loading: false,
+  loading: true,
 };
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  variant: 'tertiary',
+export const ThirdStory = Template.bind({});
+ThirdStory.args = {
+  variant: 'secondary',
   outline: true,
-  size: 'sm',
+  size: 'lg',
   rounded: 'lg',
   children: 'Click me3',
   loading: true,
 };
-export const Destructive = Template.bind({});
-Destructive.args = {
-  variant: 'destructive',
-  outline: true,
-  size: 'sm',
-  rounded: 'lg',
-  children: 'Click me3',
-  loading: true,
-};
-
-// export default {
-//   component: LegalesignButton,
-//   title: 'LegalesignButton',
-//   tags: ['autodocs'],
-//   args: {
-//     variant: 'primary',
-//     children: 'My button',
-//   },
-// };
-
-// export const Default = {
-//   args: {
-//     variant: 'primary',
-//     children: 'My button',
-//   },
-// };
